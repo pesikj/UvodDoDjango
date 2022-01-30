@@ -11,3 +11,15 @@ class ContactsView(TemplateView):
 class CourseListView(ListView):
     template_name = "course_list.html"
     model = models.Course
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["test"] = "Ahoj"
+        context["branches"] = models.Branch.objects.all()
+        return context
+
+class BranchListView(ListView):
+    template_name = "branch_list.html"
+    model = models.Branch
+
+
