@@ -1,0 +1,10 @@
+<h1>{{ object.name }}</h1>
+
+<h2>Termín</h2>
+<p>Kurz se koná {{ object.start | date }} od {{ object.start | time }} do {{ object.end | time }}</p>
+<p>Cena: {{ object.price }} Kč</p>
+<p>Popis {{ object.description }}</p>
+<p> 
+    <a href="{% url "course_list" %}">Zpět na seznam kurzů</a>
+  </p>
+  

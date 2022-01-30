@@ -7,6 +7,6 @@
 
 <ol>
 {% for item in object_list %}
-<li>{{ item.name }}, začátek kurzu {{ item.start }}</li>
+<li><a href='{% url "course_detail" item.id %}'>{{ item.name }}</a>, začátek kurzu {{ item.start }}, pobočka: {{ item.branch.city }} ({{ item.branch.email }})</li>
 {% endfor %}
 </ol>
